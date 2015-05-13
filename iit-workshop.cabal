@@ -17,7 +17,6 @@ extra-source-files:  README.md
 cabal-version:       >=1.10
 
 executable iit-workshop
-  ghc-options:         -Wall
   main-is:             Main.hs
   -- other-modules:
   -- other-extensions:
