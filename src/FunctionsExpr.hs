@@ -35,6 +35,14 @@ int_tail :: [Int] -> [Int]
 --Returns all elements of list except first.
 int_tail = tail
 
+appendString :: [Char] -> [Char] -> [Char]
+--Given 2 strings, returns a single string that is a concatenation of both input strings
+appendString = (++)
+
+concatenate :: [Char] -> [Char] -> [Char]
+--Implement this function in terms of `appendString`
+concatenate s1 s2 = undefined
+
 msum :: [Int] -> Int
 --Define this functions in terms of itself
 --You have 2 helper functions defined for you.

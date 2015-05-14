@@ -39,4 +39,39 @@ addNewPerson (Node p l r) person = if personAge person <= personAge p
                                     then Node p undefined r
                                     else Node p l undefined
 
+searchPerson :: PersonTree -> Person -> Bool
+--Given a persontree and a person, check if the person exists
+--in the persontree
+searchPerson Empty _                   =  False
+searchPerson (Node (Person n _) l r) p =  if n == (personFullName p)
+                                            then undefined
+                                            else searchPerson l p || undefined
+
+
+inorderPersonTraversal :: PersonTree -> [Person]
+--Can you see what this function is trying to do?
+inorderPersonTraversal Empty = []
+inorderPersonTraversal (Node p l r) = inorderPersonTraversal l ++ [p] ++ inorderPersonTraversal r
+
+youngerThan :: PersonTree -> Person -> [Person]
+--Return all person younger than given person in a persontree
+--Implement this function using `inorderpersontraversal` defined above
+youngerThan pt p = takeWhile helper $ undefined
+  where
+    helper p' = undefined
+
+olderThan :: PersonTree -> Person -> [Person]
+--Return all person older than given person in a persontree
+--Implement this function using `inorderpersontraversal` defined above
+olderThan pt p = dropWhile helper $ undefined
+  where
+    helper p' = personAge p' < personAge p
+
+
+
+
+
+
+
+
 
