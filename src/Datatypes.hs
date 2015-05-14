@@ -3,7 +3,12 @@ module Datatypes (
     personFsName,
     personLsName,
     personFullName,
-    olderPerson
+    olderPerson,
+    addNewPerson,
+    searchPerson,
+    inorderPersonTraversal,
+    youngerThan,
+    olderThan
     ) where
 
 data Person = undefined derving (Show)
@@ -50,8 +55,10 @@ searchPerson (Node (Person n _) l r) p =  if n == (personFullName p)
 
 inorderPersonTraversal :: PersonTree -> [Person]
 --Can you see what this function is trying to do?
-inorderPersonTraversal Empty = []
-inorderPersonTraversal (Node p l r) = inorderPersonTraversal l ++ [p] ++ inorderPersonTraversal r
+--You do not have to tell haskell `how` to do inorder traversal.
+--You have to tell Haskell `what` is inorder traversal
+inorderPersonTraversal Empty         =  []
+inorderPersonTraversal (Node p l r)  =  inorderPersonTraversal l ++ [p] ++ inorderPersonTraversal r
 
 youngerThan :: PersonTree -> Person -> [Person]
 --Return all person younger than given person in a persontree
