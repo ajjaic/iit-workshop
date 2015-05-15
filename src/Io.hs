@@ -8,7 +8,7 @@ inputStr :: IO String
 --Gets a string from stdin
 inputStr = getLine
 
-outputStr :: IO ()
+outputStr :: String -> IO ()
 --Prints a string to stdout
 outputStr = putStrLn
 
